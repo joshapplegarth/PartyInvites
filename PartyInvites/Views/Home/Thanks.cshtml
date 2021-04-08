@@ -1,0 +1,36 @@
+﻿@model GuestResponse
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-sidth" />
+    <title> Thanks </title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div>
+        <h1> Thank You @Model.Name! </h1>
+
+        @if (Model.WillAttend == true)
+        {
+            @: It's great that you're coming. The drinks are already in the fridge!
+        }
+        else if (Model.WillAttend == null)
+        {
+            @: We hope that you can find a way to make it! You don't want to miss out!
+        }
+        else
+        {
+            @: Sorry that you can't make it. Thanks for letting us know.
+        }
+
+        Click <a asp-action="ListResponses"> here </a> to see who's coming.
+    </div>
+</body>
+</html>
